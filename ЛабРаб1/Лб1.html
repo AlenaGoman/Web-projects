@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<script>
+		var m = 1;var n =1;
+		
+		function showImg(n)
+		{
+		document.getElementById("image"+m).style.borderColor = "black";
+		document.getElementById("bigimg").src="pic"+n+".jpg";
+		document.getElementById("image"+n).style.borderColor = "red";
+		m = n;
+		k=n;
+		}
+		let arr = [,"pic1.jpg", "pic2.jpg", "pic3.jpg", "pic4.jpg"];
+		
+		
+		var k = 1;
+		function changeImage() {
+        k++;
+        if (k == arr.length) {
+         k = 1;
+		}
+		document.getElementById("image"+m).style.borderColor = "black";
+		document.getElementById("bigimg").src=arr[k];
+		document.getElementById("image"+k).style.borderColor = "red";
+		m = k;
+		}
+		</script>
+	</head>
+	<body>
+		<img id="bigimg" src="pic1.jpg" onclick= "changeImage(k)" border="5px" width="442"/><br>
+		<img id = "image1" src="pic1.jpg" border="5px" width="100" onclick="showImg(1)"/>
+		<img id = "image2" src="pic2.jpg" border="5px" width="100" onclick="showImg(2)"/>
+		<img id = "image3" src="pic3.jpg" border="5px" width="100" onclick="showImg(3)"/>
+		<img id = "image4" src="pic4.jpg" border="5px" width="100" onclick="showImg(4)"/>
+	</body>
+</html>

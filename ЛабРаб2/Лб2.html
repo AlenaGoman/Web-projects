@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<script>
+		function showDescription1(combo) {
+		var descField = document.getElementById("description1");
+		switch (combo.value) {
+			case "A" : descField.innerHTML = "Мотоциклы"; break;
+			case "B" : descField.innerHTML = "Легковые автомобили"; break;
+			case "C" : descField.innerHTML = "Грузовые автомобили"; break;
+			case "D" : descField.innerHTML = "Автобусы"; break;
+			case "E" : descField.innerHTML = "Автомобили с прицепом"; break;
+			}
+		}
+		
+		function showDescription2(category) {
+		var descField = document.getElementById("description2");
+		switch (category) {
+			case "A" : descField.innerHTML = "Мотоциклы"; break;
+			case "B" : descField.innerHTML = "Легковые автомобили"; break;
+			case "C" : descField.innerHTML = "Грузовые автомобили"; break;
+			case "D" : descField.innerHTML = "Автобусы"; break;
+			case "E" : descField.innerHTML = "Автомобили с прицепом"; break;
+			}
+		}
+		</script>
+	</head>
+	<body>
+		<select onchange="showDescription1(this)">
+			<option value="A">Категория A</option>
+			<option value="B">Категория B</option>
+			<option value="C">Категория C</option>
+			<option value="D">Категория D</option>
+			<option value="E">Категория E</option>
+		</select>
+		<span><b>Описание:</b></span>
+		<span id="description1">Мотоциклы</span>
+		<br>
+		<hr>
+		<input id="A" type="radio" name="category" checked="true" onchange="showDescription2('A')"/>
+		<label for="A">Категория A</label>
+		<br>
+		<input type="radio" name="category" onchange="showDescription2('B')"/>
+		<label for="B">Категория B</label>
+		<br>
+		<input type="radio" name="category" onchange="showDescription2('C')"/>
+		<label for="C">Категория C</label>
+		<br>
+		<input type="radio" name="category" onchange="showDescription2('D')"/>
+		<label for="D">Категория D</label>
+		<br>
+		<input type="radio" name="category" onchange="showDescription2('E')"/>
+		<label for="E">Категория E</label>
+		<br>
+		<div><b>Описание:</b></div>
+		<div id="description2">Мотоциклы</div>
+	</body>
+</html>
