@@ -1,0 +1,65 @@
+<html>
+	<head>
+		<script>
+			var x=50, y = 50;
+			var canvas;
+			var ctx;
+			var col;
+			var h = 20;
+			var w = 20;
+			
+		function init() {
+		canvas = document.getElementById('canvas')
+		ctx = canvas.getContext('2d');
+		ctx.strokeStyle = 'black';
+		ctx.strokeRect(0,0,640,480);
+		ctx.fillRect(x,y,20,20);
+		ctx.fillStyle = 'black';
+		document.addEventListener("keydown", move);
+		document.getElementById("x").value = "x=" + x;
+		document.getElementById("y").value = "y=" + y;
+		}
+		
+		function move(event) {
+		ctx.clearRect(x,y,h,w);
+	
+		
+		if (event.keyCode == 38) {
+		if (y>0) {y-=5;}}
+		
+		if (event.keyCode == 40) {
+		if (y<480-h) {y+=5;}}
+		
+		if (event.keyCode == 39) {
+		if (x<640-w) {x+=5;}}
+		
+		if (event.keyCode == 37) {
+		if (x>0) {x-=5;}}
+		
+		if (event.keyCode == 49) {col = "red"}
+		if (event.keyCode == 50) {col = "blue"}
+		if (event.keyCode == 51) {col = "green"}
+		
+		if (event.keyCode == 66) {h = 60, w=60}
+		if (event.keyCode == 77) {h = 40, w=40}
+		if (event.keyCode == 83) {h = 30, w=30}
+		
+		
+		document.getElementById("x").value = x
+		document.getElementById("y").value = y;
+		
+		ctx.fillStyle = col;
+		
+		ctx.fillRect(x,y,h,w);
+		ctx.strokeRect(0,0,640,480);
+		}
+			</script>
+	</head>
+	<body onload="init();">
+		<input type = "text" id = "x"></input>
+		<input type = "text" id = "y"></input>
+		<br>
+		<canvas id="canvas" width="640" height="480">
+		</canvas>
+	</body>
+</html>
